@@ -1,0 +1,19 @@
+{
+  "name": "kortebroekaanbot",
+  "version": "1.0.0",
+  "description": "Daily instagram poster from KorteBroekAan",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Kyllian",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.8.0",
+    "dotenv": "^10.0.0",
+    "http": "0.0.1-security",
+    "instagram-private-api": "^1.45.2",
+    "node-schedule": "^2.1.0",
+    "request": "^2.88.2"
+  }
+}
