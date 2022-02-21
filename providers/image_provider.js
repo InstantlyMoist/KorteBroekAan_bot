@@ -62,6 +62,7 @@ exports.createImage = async function (location, rainChance, temperature, index) 
 exports.createImageFromLocation = async function (location, index) {
     return new Promise(async function (resolve, reject) {
         const weather = await weatherProvider.getWeather(location);
+        console.log(weather);
         const temperature = weather['forecast']['forecastday'][0]['day']['avgtemp_c'];
         const rainChance = weather['forecast']['forecastday'][0]['day']['daily_chance_of_rain'];
         resolve(await exports.createImage(location, rainChance, temperature, index));
