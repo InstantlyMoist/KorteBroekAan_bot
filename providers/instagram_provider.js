@@ -95,14 +95,21 @@ exports.getCommentsFromLastPost = async function () {
         resolve(maxComment == null ? null : {
             "username": maxComment.user.username,
             //"location": "Sneek",
-            "location": maxComment.text.split(" ")[0].split(".")[0],
+            "location": maxComment.text.split(" ")[0].split(".")[0].split(",")[0],
             "likes": maxComment.comment_like_count
         });
     });
 }
 
 exports.postDaily = async function (topComment) {
-    let locations = ["Noord Brabant", "Utrecht", "Groningen", "Arnhem"];
+    let locations = ["Noord Brabant", "Utrecht", "Groningen", "Arnhem", "Den Haag, Netherlands"];
+    topComment = await exports.getCommentsFromLastPost();
+    // topComment = {
+    //     "username": "jessinofficial",
+    //     "location": "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch",
+    //     "likes": 13
+    // };
+    
     if (topComment != null) locations.push(topComment.location);
     const weatherBuffers = await imageProvider.createImageFromLocations(locations);
 
@@ -133,7 +140,11 @@ exports.getFormattedString = function (weatherBuffers, topComment) {
     let finalString = "Kan ik vandaag een korte broek aan?\n";
     for (const currentBuffer in weatherBuffers) {
         const buffer = weatherBuffers[currentBuffer];
-        finalString += `In ${buffer.location} is er een regenkans van ${buffer.rainChance}% met een temperatuur van ${buffer.temperature}°C. Hier kan je vandaag ${buffer.shortPants ? "een" : "geen"} korte broek aan!\n\n`;
+        if (buffer.rainChance == undefined || buffer.temperature == undefined) {
+            finalString += `De locatie ${buffer.location} konden we helaas niet inladen vandaag...\n\n`;
+        } else {
+            finalString += `In ${buffer.location} is er een regenkans van ${buffer.rainChance}% met een temperatuur van ${buffer.temperature}°C. Hier kan je vandaag ${buffer.shortPants ? "een" : "geen"} korte broek aan!\n\n`;
+        }
     }
     if (topComment == null) {
         finalString += `Gisteren heeft helaas niemand een reactie achtergelaten!`;

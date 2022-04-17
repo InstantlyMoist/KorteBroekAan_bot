@@ -59,13 +59,53 @@ exports.createImage = async function (location, rainChance, temperature, index) 
     });
 }
 
+exports.createUnknownImage = async function (location, index) {
+    return new Promise(async function (resolve, reject) {
+        //const shortPants = shortPantsCalculator.canWearShortPants(rainChance, temperature);
+        const canvas = createCanvas(1080, 1080);
+        const context = canvas.getContext("2d");
+
+        context.imageSmoothingEnabled = false;
+
+        context.fillStyle = "#CFE1CF";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        context.font = "bold 64px Roboto";
+        context.fillStyle = "#387932";
+        context.fillText("Kan ik vandaag een korte \nbroek aan?", 64, 128);
+
+        const weatherImage = await loadImage("./assets/unknown-man.png");
+        const widthAspect = weatherImage.width > weatherImage.height;
+        const desiredWidth = widthAspect ? 500 : 500 * (500 / weatherImage.height);
+        const desiredHeight = widthAspect ? 500 * (desiredWidth / weatherImage.width) : 500;
+        context.drawImage(weatherImage, (canvas.width / 2) - (desiredWidth / 2), (canvas.height / 2) - (desiredHeight / 2) + midOffset, desiredWidth, desiredHeight);
+
+        context.font = "32px Roboto";
+        context.fillText(`Sorry, we konden het weer voor\n${location} \nniet inladen!`, 128, informationHeight + 36);
+
+        const buffer = canvas.toBuffer('image/jpeg');
+        const path = `./output_${index}.jpeg`;
+        fs.writeFileSync(path, buffer); // TODO: Make this dynammic
+
+        // TODO get correct folder
+        console.log("Picture has been created");
+        resolve({
+            buffer, location
+        });
+    });
+}
+
 exports.createImageFromLocation = async function (location, index) {
     return new Promise(async function (resolve, reject) {
         const weather = await weatherProvider.getWeather(location);
-        console.log(weather);
-        const temperature = weather['forecast']['forecastday'][0]['day']['avgtemp_c'];
-        const rainChance = weather['forecast']['forecastday'][0]['day']['daily_chance_of_rain'];
-        resolve(await exports.createImage(location, rainChance, temperature, index));
+        //console.log(weather['forecast']['forecastday']); 
+        try {
+            const temperature = weather['forecast']['forecastday'][0]['day']['maxtemp_c'];
+            const rainChance = weather['forecast']['forecastday'][0]['day']['daily_chance_of_rain'];
+            resolve(await exports.createImage(location, rainChance, temperature, index));
+        } catch (exc) {
+            resolve(await exports.createUnknownImage(location, index));
+        }
     });
 }
 
