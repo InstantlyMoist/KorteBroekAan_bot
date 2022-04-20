@@ -46,7 +46,7 @@ async function init() {
     //instagramProvider.postDaily();
     //await instagramProvider.postComment();
 
-    schedule.scheduleJob("0 7 * * *", function () {
+    schedule.scheduleJob("0 5 * * *", function () {
         instagramProvider.postDaily();
     });
 }
