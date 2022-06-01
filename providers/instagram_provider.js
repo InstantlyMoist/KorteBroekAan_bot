@@ -105,13 +105,8 @@ exports.getCommentsFromLastPost = async function () {
 }
 
 exports.postDaily = async function (topComment) {
-    let locations = ["Noord Brabant", "Utrecht", "Groningen", "Arnhem", "Den Haag, Netherlands"];
+    let locations = ["Noord Brabant", "Utrecht", "Groningen", "Arnhem", "Den Haag, Netherlands", "Zeeland"];
     topComment = await exports.getCommentsFromLastPost();
-    // topComment = {
-    //     "username": "jessinofficial",
-    //     "location": "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch",
-    //     "likes": 13
-    // };
     
     if (topComment != null) locations.push(topComment.location);
     const weatherBuffers = await imageProvider.createImageFromLocations(locations);
