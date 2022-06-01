@@ -1,7 +1,10 @@
 const instagram = require("instagram-private-api");
 const client = new instagram.IgApiClient();
+const { IgApiClient, IgCheckpointError } = require("instagram-private-api");
 const imageProvider = require("../providers/image_provider");
 const fileProvider = require("../providers/file_provider");
+const Bluebird = require('bluebird');
+const inquirer = require('inquirer');
 
 let loggedInUser;
 
@@ -133,7 +136,22 @@ exports.postDaily = async function (topComment) {
 exports.login = async function () {
     client.state.generateDevice(process.env.IG_USERNAME);
     console.log(`Logging in as ${process.env.IG_USERNAME}`);
-    loggedInUser = await client.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
+    await Bluebird.try(async () => {
+        loggedInUser = await client.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
+        //console.log(auth);
+      }).catch(IgCheckpointError, async () => {
+        console.log(ig.state.checkpoint); // Checkpoint info here
+        await ig.challenge.auto(true); // Requesting sms-code or click "It was me" button
+        console.log(ig.state.checkpoint); // Challenge info here
+        const { code } = await inquirer.prompt([
+          {
+            type: 'input',
+            name: 'code',
+            message: 'Enter code',
+          },
+        ]);
+        console.log(await ig.challenge.sendSecurityCode(code));
+      }).catch(e => console.log('Could not resolve checkpoint:', e, e.stack));  
 }
 
 exports.getFormattedString = function (weatherBuffers, topComment) {

@@ -1,3 +1,3 @@
 exports.canWearShortPants = function(rainChance, temperature) {
-    return rainChance < 30 && temperature > 15;
+    return rainChance < 90 && temperature > 15;
 }

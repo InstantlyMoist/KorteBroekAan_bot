@@ -1,5 +1,5 @@
 const shortPantsCalculator = require("../utils/short_pants_calculator");
-const weatherProvider = require("../providers/weather_provider");
+const weatherProvider = require("./weather_provider.js");
 const color = require("../utils/color");
 const { createCanvas, loadImage } = require("canvas");
 const fs = require("fs");

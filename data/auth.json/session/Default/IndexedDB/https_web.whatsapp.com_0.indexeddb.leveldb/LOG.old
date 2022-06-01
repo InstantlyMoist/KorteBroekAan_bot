@@ -1,0 +1,29 @@
+2022/06/01-16:09:19.965 318e5 Reusing MANIFEST /home/kyllian/Documents/KorteBroekAanBot/data/auth.json/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/06/01-16:09:19.965 318e5 Recovering log #297
+2022/06/01-16:09:19.971 318e5 Reusing old log /home/kyllian/Documents/KorteBroekAanBot/data/auth.json/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000297.log 
+2022/06/01-16:09:24.150 318e8 Level-0 table #310: started
+2022/06/01-16:09:24.168 318e8 Level-0 table #310: 1166313 bytes OK
+2022/06/01-16:09:24.172 318e8 Delete type=0 #297
+2022/06/01-16:09:24.298 318e5 Compacting 1@1 + 9@2 files
+2022/06/01-16:09:24.358 318e5 Generated table #311@1: 32435 keys, 2247369 bytes
+2022/06/01-16:09:24.403 318e5 Generated table #312@1: 48994 keys, 2284890 bytes
+2022/06/01-16:09:24.423 318e5 Generated table #313@1: 9923 keys, 2151612 bytes
+2022/06/01-16:09:24.436 318e5 Generated table #314@1: 358 keys, 2109078 bytes
+2022/06/01-16:09:24.473 318e5 Generated table #315@1: 28248 keys, 2149149 bytes
+2022/06/01-16:09:24.526 318e5 Generated table #316@1: 95127 keys, 2247601 bytes
+2022/06/01-16:09:24.578 318e5 Generated table #317@1: 94461 keys, 2244644 bytes
+2022/06/01-16:09:24.631 318e5 Generated table #318@1: 94982 keys, 2247419 bytes
+2022/06/01-16:09:24.688 318e5 Generated table #319@1: 94586 keys, 2245727 bytes
+2022/06/01-16:09:24.696 318e5 Generated table #320@1: 8935 keys, 212314 bytes
+2022/06/01-16:09:24.696 318e5 Compacted 1@1 + 9@2 files => 20139803 bytes
+2022/06/01-16:09:24.700 318e5 compacted to: files[ 0 0 10 0 0 0 0 ]
+2022/06/01-16:09:24.700 318e5 Delete type=2 #300
+2022/06/01-16:09:24.700 318e5 Delete type=2 #299
+2022/06/01-16:09:24.700 318e5 Delete type=2 #305
+2022/06/01-16:09:24.700 318e5 Delete type=2 #306
+2022/06/01-16:09:24.700 318e5 Delete type=2 #303
+2022/06/01-16:09:24.700 318e5 Delete type=2 #307
+2022/06/01-16:09:24.700 318e5 Delete type=2 #302
+2022/06/01-16:09:24.700 318e5 Delete type=2 #304
+2022/06/01-16:09:24.700 318e5 Delete type=2 #310
+2022/06/01-16:09:24.700 318e5 Delete type=2 #301
