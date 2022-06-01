@@ -1,4 +1,4 @@
-let msb = require("./../msbcreator.js");
+let msb = require("../../msbcreator.js");
 
 exports.name = "mock";
 exports.description = "Mocks a quoted message";
