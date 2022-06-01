@@ -1,30 +1,3 @@
-2022/06/01-16:10:37.914 31afb Reusing MANIFEST /home/kyllian/Documents/KorteBroekAanBot/data/auth.json/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/06/01-16:10:37.914 31afb Recovering log #309
-2022/06/01-16:10:37.935 31afb Reusing old log /home/kyllian/Documents/KorteBroekAanBot/data/auth.json/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000309.log 
-2022/06/01-16:11:00.519 31afc Level-0 table #323: started
-2022/06/01-16:11:00.534 31afc Level-0 table #323: 1259508 bytes OK
-2022/06/01-16:11:00.539 31afc Delete type=0 #309
-2022/06/01-16:11:00.540 31afc Compacting 1@1 + 10@2 files
-2022/06/01-16:11:00.584 31afc Generated table #324@1: 37019 keys, 2250219 bytes
-2022/06/01-16:11:00.625 31afc Generated table #325@1: 48979 keys, 2291086 bytes
-2022/06/01-16:11:00.649 31afc Generated table #326@1: 13752 keys, 2167042 bytes
-2022/06/01-16:11:00.661 31afc Generated table #327@1: 357 keys, 2109295 bytes
-2022/06/01-16:11:00.679 31afc Generated table #328@1: 14235 keys, 2130392 bytes
-2022/06/01-16:11:00.733 31afc Generated table #329@1: 94788 keys, 2246470 bytes
-2022/06/01-16:11:00.795 31afc Generated table #330@1: 94271 keys, 2245324 bytes
-2022/06/01-16:11:00.849 31afc Generated table #331@1: 94675 keys, 2247097 bytes
-2022/06/01-16:11:00.903 31afc Generated table #332@1: 94375 keys, 2244876 bytes
-2022/06/01-16:11:00.922 31afc Generated table #333@1: 30135 keys, 718536 bytes
-2022/06/01-16:11:00.922 31afc Compacted 1@1 + 10@2 files => 20650337 bytes
-2022/06/01-16:11:00.926 31afc compacted to: files[ 0 0 10 0 0 0 0 ]
-2022/06/01-16:11:00.926 31afc Delete type=2 #317
-2022/06/01-16:11:00.926 31afc Delete type=2 #316
-2022/06/01-16:11:00.926 31afc Delete type=2 #323
-2022/06/01-16:11:00.926 31afc Delete type=2 #315
-2022/06/01-16:11:00.926 31afc Delete type=2 #318
-2022/06/01-16:11:00.926 31afc Delete type=2 #319
-2022/06/01-16:11:00.926 31afc Delete type=2 #314
-2022/06/01-16:11:00.926 31afc Delete type=2 #320
-2022/06/01-16:11:00.926 31afc Delete type=2 #312
-2022/06/01-16:11:00.926 31afc Delete type=2 #311
-2022/06/01-16:11:00.926 31afc Delete type=2 #313
+2022/06/01-19:56:52.836 3432d Reusing MANIFEST /home/kyllian/Documents/KorteBroekAanBot/data/auth.json/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/06/01-19:56:52.837 3432d Recovering log #322
+2022/06/01-19:56:52.872 3432d Reusing old log /home/kyllian/Documents/KorteBroekAanBot/data/auth.json/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000322.log 

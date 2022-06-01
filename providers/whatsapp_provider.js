@@ -39,8 +39,6 @@ whatsappClient.on('authenticated', () => {
 });
 
 whatsappClient.on('message', async msg => {
-    console.log('MESSAGE RECEIVED', msg);
-
     const args = msg.body.slice('!'.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     const cmd = whatsappClient.commands.get(command);
