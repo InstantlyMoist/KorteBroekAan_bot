@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const whatsappClient = new Client({
     authTimeoutMs: 900000,
-    puppeteer: { headless: true },
+    puppeteer: { headless: true , args: ['--no-sandbox', '--disable-setuid-sandbox'] },
     authStrategy: new LocalAuth({dataPath: './data/auth.json'}),
 });
 
