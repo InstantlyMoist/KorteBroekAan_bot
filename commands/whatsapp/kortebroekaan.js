@@ -6,7 +6,7 @@ exports.description = "Wil jij weten of je een korte broek aan kunt";
 
 exports.run = async (client, msg, args) =>  {
     // Get current time in milliseconds
-    let now = new Date().now();
+    let now = new Date().getTime();
     MessageMedia = client.messagemedia;
     if (args.length == 0) {
         msg.reply("Voeg een plaats toe om te kijken of je een korte broek aan kunt");
@@ -28,12 +28,12 @@ exports.run = async (client, msg, args) =>  {
         finalString += `In ${imagePath.location} is er een regenkans van ${imagePath.rainChance}% met een temperatuur van ${imagePath.temperature}°C. Hier kan je vandaag ${imagePath.shortPants ? "een" : "geen"} korte broek aan!\n\n`;
     }
 
-    let end = new Date().now() - now;
+    let end = new Date().getTime() - now;
 
     finalString += "\nDeze informatie is opgehaald in " + end + "ms";
 
     finalString += "\nDeel dit bericht met je vrienden en join onze groepsapp: https://chat.whatsapp.com/EqTygiIr1iQ5sEzA1rh7nl"
 
-    if (imagePath.location.includes("(")) caption += "\nGelieve volgende keer geen haakjes toe te voegen!";
-    client.sendMessage(msg.from, mm, { caption: caption });
+    if (imagePath.location.includes("(")) finalString += "\nGelieve volgende keer geen haakjes toe te voegen!";
+    client.sendMessage(msg.from, mm, { caption: finalString });
 }
